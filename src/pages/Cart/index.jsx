@@ -1,0 +1,36 @@
+import React from 'react';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+import EmptyCart from '../../components/Cart/EmptyCart';
+import Footer from '../../components/common/Footer';
+import Logo from '../../components/common/Logo';
+import Menu from '../../components/common/Menu';
+import MenuItem from '../../components/common/Menu/MenuItem';
+import {
+  selectCartItems,
+  selectCartItemsCount,
+  selectCartTotal,
+} from '../../redux/cart/cart.selector';
+import './styles.css';
+
+const Cart = () => {
+  return (
+    <>
+      <div className='cart-header'>
+        <Logo />
+      </div>
+      <div className='orders'>
+        <h1 className='orders-heading'>Your Orders</h1>
+        <div className='orders-menu'>
+          <Menu />
+        </div>
+        <h3 className='orders-total'>Your Total $0</h3>
+      </div>
+      <Footer />
+    </>
+  );
+};
+
+
+
+export default Cart;
